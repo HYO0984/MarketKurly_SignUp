@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마켓컬리 회원가입</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="./script/lib/jquery-1.12.4.min.js"></script>
+  <script src="./script/lib/postcode.v2.js"></script>
+</head>
+<body>
+  <div id="wrap">
+    <header id="header">
+      <div class="container">
+        <div class="wrap">
+          <div class="popup">
+            <div class="popup-container">
+              <!-- 팝업 전체 링크 -->
+              <a href="#">
+                <span>지금 가입하고 인기상품 100원에 받아가세요!
+                  <i>
+                    <img src="./images/ico_arrow_fff_84x84.png" alt="">
+                 </i>
+                </span>
+              </a>
+              <!-- 닫기버튼 -->
+              <span>
+                <button class="popup-close-btn" title="닫기">
+                  <img src="./images/ico_close_fff_42x42.webp" alt="">
+                </button>
+              </span>
+            </div>
+          </div>
+          <h1><a href="#" class="logo" title="logo"><img src="./images/logo_x2.png" alt="logo"></a></h1>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="member">
+        <div class="container">
+          <div class="wrap">
+            <!-- 타이틀 -->
+            <div class="title">
+              <h2>회원가입</h2>
+            </div>
+            <!-- 전송할 회원가입폼 -->
+            <div class="content">
+              <!-- <form id="member" name="member" method="post" action="response.php"> -->
+                <ul id="memberForm">
+                  <li>
+                    <h3><i>*</i><span>필수입력사항</span></h3>
+                  </li>
+                  <li>
+                    <div class="left">
+                      <label><span>아이디</span><i>*</i></label>
+                    </div>
+                    <div class="right">
+                      <input type="text" id="inputId" name="inputId" placeholder="6자 이상 영문 혹은 영문과 숫자를 조합" maxlength="20">
+                      <button class="id-double-btn">중복확인</button>
+                      <div class="guide-text guide-id">
+                        <p>6자 이상의 영문 혹은 영문과 숫자를 조합</p>
+                        <p>아이디 중복확인</p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="left">
+                      <label><span>비밀번호</span><i>*</i></label>
+                    </div>
+                    <div class="right">
+                      <input type="password" id="inputPw" name="inputPw" placeholder="비밀번호를 입력해주세요" maxlength="20">
+                      <div class="guide-text guide-pw">
+                        <p>10자 이상 입력</p>
+                        <p>영문/숫자/특수문자(공백 제외)만 허용하며, 2개 이상 조합</p>
+                        <p>동일한 숫자 3개 이상 연속 사용 불가</p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="left">
+                      <label><span>비밀번호 확인</span><i>*</i></label>
+                    </div>
+                    <div class="right">
+                      <input type="password" id="inputPwConfirm" name="inputPwConfirm" placeholder="비밀번호를 한번 더 입력해주세요" maxlength="20">
+                      <div class="guide-text guide-password-confirm">
+                        <p>동일한 비밀번호를 입력해주세요.</p>
+                    </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="left">
+                      <label><span>이름</span><i>*</i></label>
+                    </div>
+                    <div class="right">
+                      <input type="text" id="inputName" name="inputName" placeholder="이름을 입력해주세요"maxlength="30">
+                    </div>
+                  </li>
+                  <li>
+                    <div class="left">
+                      <label><span>이메일</span><i>*</i></label>
+                    </div>
+                    <div class="right">
+                      <input type="email" id="inputEmail" class="" name="inputEmail" placeholder="예)marketkurly@kurly.com" maxlength="50">
+                      <button class="email-double-btn">중복확인</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="left">
+                      <label><span>휴대폰</span><i>*</i></label>
+                    </div>
+                    <div class="right">
+                      <input type="text" id="inputPhone" name="inputPhone" placeholder="숫자만 입력해주세요" maxlength="11">
+                      <button class="phone-btn">인증번호받기</button>
+                    </div>
+                  </li>
+
+                  <li class="address">
+                    <div class="left">
+                      <label><span>주소</span><i>*</i></label>
+                    </div>
+                    <div class="right">
+                      <input type="text" id="inputAddress1" name="inputAddress1" placeholder="검색주소" >
+                      <input type="text" id="inputAddress2" name="inputAddress2" placeholder="세부주소를 입력하세요" >
+                      <button class="address-btn" title="주소검색"><span><img src="./images/ico_search.svg" alt="">주소검색</span></button>
+                      <p class="address-guidetext">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="left">
+                      <label><span>성별</span></label>
+                    </div>
+                    <div class="right gender">
+                      <label for="male">
+                        <input type="radio" id="male" name="gender" value="남자">
+                        <span>남자</span>
+                      </label>
+                      <label for="female">
+                        <input type="radio" id="female" name="gender" value="여자">
+                        <span>여자</span>
+                      </label>
+                      <label for="none">
+                        <input type="radio" id="none" name="gender" value="선택안함">
+                        <span>선택안함</span>
+                      </label>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="left">
+                      <label><span>생년월일</span></label>
+                    </div>
+                    <div class="right">
+                      <div class="date-box">
+                        <ul>
+                          <li><input type="text" id="year" name="year" placeholder="YYYY" maxlength="4"></li>
+                          <li><span>/</span></li>
+                          <li><input type="text" id="month" name="month" placeholder="MM" maxlength="2"></li>
+                          <li><span>/</span></li>
+                          <li><input type="text" id="date" name="date" placeholder="DD" maxlength="2"></li>
+                        </ul>
+                      </div>
+                      <div class="guide-text guide-birthday-confirm">
+                        <p class="error"></p>
+
+                      </div>
+                    </div>
+                  </li>
+
+                  <li>
+                    <div class="left">
+                      <label><span>추가입력 사항</span></label>
+                    </div>
+                    <div class="right gender add">
+                      <label for="add1">
+                        <input type="radio" id="add1" name="add" value="추천인 아이디">
+                        <span>추천인 아이디</span>
+                      </label>
+                      <label for="add2">
+                        <input type="radio" id="add2" name="add" value="참여 이벤트명">
+                        <span>참여 이벤트명</span>
+                      </label>
+                    </div>
+                  </li>
+                  
+                  <li>
+                    <hr>
+                  </li>
+                  <!-- 약관동의:체크박스 -->
+                    <li class="check-box">
+                      <div class="left">
+                        <label><span>이용약관동의</span><i>*</i></label>
+                      </div>
+                      <div class="right service">
+                        <ol>
+                          <li>
+                            <label for="chkAll">
+                              <input type="checkbox" id="chkAll" name="chkAll" value="전체동의합니다." >
+                              <span>전체동의합니다.</span>
+                            </label>
+                            <p>선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
+                          </li>
+                          <li class="view-box">
+                            <label for="chk1">
+                              <input type="checkbox" id="chk1" name="chk1" class="chkbox-btn" value="이용약관동의(필수)">
+                              <span>이용약관동의<i>(필수)</i></span>
+                            </label>
+                            <span class="view-btn-box"><a href="#" class="view-btn" title="약관보기">약관보기<i>&gt;</i></a></span>
+                          </li>
+                          
+                            
+                          
+                          
+                          <li class="view-box" >
+                            <label for="chk2">
+                              <input type="checkbox" id="chk2" name="chk2" class="chkbox-btn" value="개인정보 수집·이용 동의 (필수)">
+                              <span>개인정보 수집·이용 동의<i>(필수)</i></span>
+                            </label>
+                            <span class="view-btn-box"><a href="#" class="view-btn" title="약관보기">약관보기<i>&gt;</i></a></span>
+                          </li>
+                          
+                          <li class="view-box">
+                            <label for="chk3">
+                              <input type="checkbox" id="chk3" name="chk3" class="chkbox-btn" value="개인정보 수집·이용 동의 (선택)">
+                              <span>개인정보 수집·이용 동의<i>(선택)</i></span>
+                            </label>
+                            <span class="view-btn-box"><a href="#" class="view-btn" title="약관보기">약관보기<i>&gt;</i></a></span>
+                          </li>
+                          
+                          <li>
+                            <label for="chk4">
+                              <input type="checkbox" id="chk4" name="chk4" class="chkbox-btn" value="무료배송, 할인쿠폰 등 혜택/정보 수신 동의 (선택)">
+                              <span>무료배송, 할인쿠폰 등 혜택/정보 수신 동의<i>(선택)</i></span>
+                            </label>
+                            <dl>
+                              <dd>
+                                <label for="chk5">
+                                  <input type="checkbox" id="chk5" name="chk5" class="chkbox-btn" value="SMS">
+                                  <span>SMS</span>
+                                </label>
+                                <label for="chk6">
+                                  <input type="checkbox" id="chk6" name="chk6" class="chkbox-btn" value="이메일">
+                                  <span>이메일</span>
+                                </label>
+                              </dd>
+                              <dt>
+                                <p>동의 시 한 달간 [5%적립] + [2만원 이상 무료배송] 첫 주문 후 안내</p>
+                              </dt>
+                            </dl>
+                          </li>
+                         
+                         
+                          <li>
+                            <label for="chk7">
+                              <input type="checkbox" id="chk7" name="chk7" class="chkbox-btn" value="본인은 만 14세 이상입니다. (필수)">
+                              <span>본인은 만 14세 이상입니다.<i>(필수)</i></span>
+                            </label>
+                          </li>
+                        </ol>
+                      </div>
+                    </li>
+                  
+                  <li class="bottom-line">
+                    <hr>
+                  </li>
+                  <li class="button-box">
+                    <!-- submit 섭밋(서브밋) :폼전송을 해주는 기능 엔터치면 ---> 
+                    <!-- <button type="submit" class="submit-btn">가입하기</button> -->
+                    <button type="submit" class="submit-btn">가입하기</button>
+                  </li>
+                </ul>
+              <!-- </form> -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="container">
+        <div class="wrap">
+          
+        </div>
+      </div>
+    </footer>
+
+    
+    <!-- 모달 팝업창 -->
+    <div id="modal">
+      <div class="container">
+        <ul>
+          <li>
+            <h2>알림메세지</h2>
+            <button class="close-btn modal-close"><img src="./images/icon-close-button.webp" alt=""></button>
+          </li>
+          <li>
+            <p class="modal-message">이메일 주소를 입력해주세요</p>
+          </li>
+        </ul>
+        <div class="button-box">
+          <button class="ok-btn modal-close">확인</button>
+        </div>
+      </div>
+
+    </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+  <script src="./script/kurly.js"></script>
+</body>
+</html>
